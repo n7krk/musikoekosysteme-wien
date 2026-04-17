@@ -5,3 +5,5 @@ Schalltaucherin,Einzelperson,Veranstaltungen experimental Wien,Einzelveranstaltu
 klingt.org sounds.weird,Kollektiv,Veranstaltungen experimental Wien,Einzelveranstaltung | Programm,https://klingt.org/,HTML,primär,-,actual,manuell extrahieren
 esel.at,Kulturportal,Veranstaltungskalender Wien Bühne/Performance,Rohdaten | Einzelveranstaltung,https//www.esel.at/de/programm/buehne,HTML-Tabelle,primär,-,2020-2026,manuell extrahieren
 Phantanoise,Kollektiv/Portal,Veranstaltungskalender Neue Musik Wien,Rohdaten | Einzelveranstaltung,https//www.phantanoise.com/events,HTML-Tabelle,primär,-,2025-2026,manuell extrahieren
+skug Musikkultur Termine,Kulturmedium,Veranstaltungskalender Musik Wien,Rohdaten | Einzelveranstaltung,https://skug.at/termine/,HTML-Tabelle,primär,gemischtes Programm,2020-2026,manuell extrahieren
+Jahresendzeitschokoladenhohlkoerper Festival,Kollektiv,Veranstalterinnen-Verzeichnis Experimentelle Musik Wien,Verzeichnis | Organisation,https://jahresendzeitschokoladenhohlkoerper.klingt.org/veranstalterinnen-2024/,HTML,primär,vollständig,2024,manuell extrahieren
