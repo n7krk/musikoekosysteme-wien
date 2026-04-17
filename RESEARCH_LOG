@@ -1,0 +1,82 @@
+RESEARCH LOG
+
+/Notes from Obsidian/ 
+
+DECISIONS
+March 31
+	•	markdown files and github commits in english. table field names in german to reflect original austrian data sources. data values preserved in original german	•	Corpus defined by individual Venues, not by musical genre
+	•	OpenRefine tutorial
+	⁃	Key features for the project: Facets and clustering. Text facet, numeric facet, and custom text facet
+	•	Github: Repository created
+	•	Save venue coordinates (lat/lon) in the table → makes QGIS easier
+April 1–6
+	•	DATA COLLECTION PROCESS 
+	⁃	Sources discovery: 
+	⁃	Primary institutional sources (Transparenzportal, data.gv.at, statistik.at) identified through independent web search. 
+	⁃	MA 7 Musikbeirat recommendations PDF identified via wien.gv.at. Community platforms (klingt.org, freemusicforum, phantanoise, esel.at) identified through prior knowledge of the Viennese experimental music scene. 
+	⁃	Temporal scope: 
+	⁃	Analysis period defined as 2022-2026. Rationale: years 2020-2021 excluded due to pandemic-related distortion of cultural activity (venue closures, event cancellations). Period 2022-2026 captures post-pandemic recovery and reconfiguration of the ecosystem. Upper limit set to 2026 to include IFG transparency data (nominative funding records available from September 2025 onward per §40k Transparenzdatenbankgesetz 2012). 
+	⁃	Venue inclusion criteria:
+	⁃	 Venues included if they meet at least one of the following:
+	⁃	 primary or significant programming focus on experimental, improvised, electronic or contemporary music
+	⁃	 documented presence of publicly funded music events 
+	⁃	active role in the independent music scene regardless of formal funding status 
+	⁃	⁃	Venues excluded: spaces with primary focus on visual art only, dance only, or commercial entertainment without documented connection to the field. 
+	⁃	Venues marked:
+	⁃	 * (secondary): present in the scene but programming focus is not primarily music or experimental work. Venues marked 
+	⁃	? (uncertain): institutional or academic context that may fall outside the independent scene scope. Final decision pending further review of programming.
+	⁃	Coordinate verification All venue coordinates verified manually via Google Maps and Google Plus Codes. Entries with unverified coordinates flagged in the table.
+	•	social media screenshots included as valid data source for event documentation
+	•	district calendars established as weekly review source during data collection phase
+	•	contact with Schaltaucherin identified as potential qualitative source (pending)
+April 6–10
+- Break down work into goals → tasks → microtasks
+- Weekly mini-phases for Phase 1 data collection
+April 13
+- Clear criteria established for including a source:
+	- info on venues, events, or funding ~ data from Vienna/period 2022-2024/easily downloadable or extractable format.
+- if the data is difficult to extract, e.g., a PDF instead of a table, note the issue under “problems”
+- sources are tagged here in Obsidian with ✅ / ❌ / ❓
+- Sources marked with ✅ are reviewed for CSV files, direct Excel files, or PDFs (copy them manually)
+. “Venues” table: venue, address, district, focus, website, lat, lon („Veranstaltungsorte“: Veranstaltungsort, Adresse, Bezirk, Schwerpunkt, Website, Breitengrad, Längengrad)
+. “Funding” table: year, amount, funder, category, source („Finanzierung“: Jahr, Betrag, Fördergeber, Kategorie, Quelle)
+. “Sources” table: institution, institution type, information type, URL, format, years, action ( „Quellen“: Einrichtung, Einrichtungstyp, Informationstyp, URL, Format, Jahre, Aktion)
+‘Action’ is defined based on whether the data is downloadable in CSV or Excel format: “Download” („Herunterladen“ )/ if it’s a PDF or web table: “Extract manually” („Manuell extrahieren“/“manuell”) / if the data exists but isn’t public: “Contact” ( „Kontaktieren“ )/ if it’s unusable: “Discard” („Verwerfen“)
+	•	Add “granularity” („Granularität“) column: aggregated, organization, individual (aggregiert, Organisation, Einzelperson).
+	•	Add “limitations” („Einschränkungen“ ) column: complete: full data; partially redacted: partially censored; anonymized: aggregated data without names; incomplete: incomplete for other reasons (vollständig: vollständige Daten; teilweise geschwärzt: teilweise geschwärzt; anonymisiert: aggregierte Daten ohne Namen; unvollständig: unvollständig aus anderen Gründen)
+
+PROBLEMS AND LIMITATIONS
+	•	Sources
+	⁃	statistik.at: limited relevance for this project. cultural/arts data 
+ 	 not easily accessible or filterable. source discarded for data collection 
+ 	 phase, may be revisited for aggregate context in report writing.
+	⁃	Transparenzportal: funding application data partially redacted. 
+  	personal information censored in PDF documents (see förderungsantrag PDF 
+  	in project folder). limitation documented - affects granularity of 
+  	individual-level analysis.
+	•	Venue classification
+	⁃	some venues host publicly funded experimental music events but are not 
+  	primarily recognized as experimental music spaces. classification criteria 
+  	established in response (see venue inclusion criteria above).
+April 14
+- In table quellen_events, the following categories are used for granularity: single event, program, and “aggregated” stays. (Einzelveranstaltung, Programm; „aggregiert“ bleibt erhalten.)
+- Changed “Schwerpunkt” to “Programmprofil” in the venues table. 
+- Add “venue type” („Venue-Typ“) category: concert hall, club, cultural center, studio, pop-up (Konzerthaus, Club, Kulturzentrum, Studio, Pop-up)
+April 15–16
+- Decided to organize each objective into specific tasks with mini- and micro-tasks to keep moving forward even if conditions change (see tasks)
+- Create a “Vereine” table based on the information in the transparency portal
+- Repository structure:
+- 	READ ME.md
+- 	DECISIONS.md
+- 	dataset.csv: central file → actual events-date-venue-event type-funding reference-source
+- 	venues.csv: physical spaces where events take place
+- 	quellen-foerderungen.csv: data sources on funding
+- 	quellen-events.csv: data sources on events
+- Add the columns “Quellentyp” and “Verwendung” to ‘quellen_venues’
+- Add the column “Klassifizierung” to the venues table: “Kernvenue,” “gemischtes programm,” “gelegentlich,” “unsicher”.
+
+
+
+
+
+
