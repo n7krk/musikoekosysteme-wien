@@ -74,7 +74,19 @@ April 15–16
 - 	quellen-events.csv: data sources on events
 - Add the columns “Quellentyp” and “Verwendung” to ‘quellen_venues’
 - Add the column “Klassifizierung” to the venues table: “Kernvenue,” “gemischtes programm,” “gelegentlich,” “unsicher”.
-
+April 21
+Decisions
+- dataset.csv separator changed from / to ; (standard european CSV, compatible with URLs and artist lists)
+- Radio OE1 included as media venue - broadcast events documented as Radiosendung
+- Dschungel Wien excluded - primary focus children's theater, music incidental
+- Theater am Werk reclassified as gemischtes Programm - music present as central element in some events
+- Rote Bar im Volkstheater added as venue - gemischtes Programm
+- veranstalter field distinguishes between venue and organizing collective (e.g. Free Music Forum at Celeste)
+Problems
+- ODS format incompatible with direct CSV import - file needs to be saved as CSV before upload to GitHub
+- separator character conflicts: / breaks URLs, | already used for artist lists - resolved with ;
+New venues identified
+- Replugged, LOK Leben ohne Krankenhaus, Setzkasten Wien, Stadtkino im Künstlerhaus, Rote Bar im Volkstheater, Akademie der Bildenden Künste Wien, St. Ruprecht, Studio Eberhard, Tonspur Festival (outdoor)
 
 
 
