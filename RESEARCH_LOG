@@ -107,7 +107,63 @@ Technical notes
 - scraping performed locally due to server allowlist restrictions
 - tools used: python 3.12, requests, beautifulsoup4
 - AI assistance used for script development and debugging
-
+April 23
+Decisions
+- talks, panels and screenings included in dataset when part of publicly 
+  funded festival programming. rationale: discursive programme integral 
+  to curatorial approach and funding justification, not incidental to 
+  musical events.
+- events outside Vienna excluded regardless of artist origin
+- language convention: event names in original source language, 
+  no spanish descriptors
+- multiple funding sources documented with | separator in foerderung_ref
+- foerderung_ref uses institution names not numbers
+- theater productions excluded even when MA7-funded (e.g. Toxic Dreams)
+- funding before September 2025 documented as [nicht verifizierbar - vor IFG]
+  when no direct source available
+New field values established
+- [nicht dokumentiert] - info exists but not publicly available
+- [nicht öffentlich] - deliberately not published (RSVP locations)
+- [manuell rekonstruierbar] - info available via Instagram but 
+  extraction disproportionate to Vorstudie scope
+- [nicht verifizierbar - vor IFG] - funding unverifiable before 
+  IFG law Sept 2025
+New column added to venues.csv
+- Status: aktiv / geschlossen / unbekannt
+  critical for QGIS mapping of ecosystem fragility
+Festivals documented
+- Unsafe+Sounds 2022-2025 complete
+- Struma+Iodine 2022-2025 complete  
+- DE/SEMBLE 2022-2025 complete
+- Augend&Addend 2024-2025 partial
+Problems and limitations
+- Unsafe+Sounds does not archive past programmes on website
+- DE/SEMBLE uses images for historical content - text not indexable
+- DE/SEMBLE 2022 edition completely undocumented online
+- Come Play Me (Jun 2023) artist names only in flyers/images
+- DE/SEMBLE Intl. Festival 2024 venue not specified in any text source
+- funding before Sept 2025 not directly verifiable via IFG
+- some Struma+Iodine Sonic Agency Listening Sessions 
+  artist data only on Instagram
+New venues identified today
+- Zacherlfabrik, Pratersauna, Brunnenpassage, Arena Wien, 
+  Kulturzentrum 4lthangrund, ifk, Flex, RRR, Undisclosed Location,
+  VE.SCH, WAF Galerie, Kevin Space, Depot, Central Garden,
+  Kunsttankstelle Ottakring, Ponyhof, Theater Nestroyhof Hamakom,
+  The Loft, Tagada Club, Bears in the Park, ORF Radiokulturhaus,
+  Jazzclub ZWE, Semper Depot, Coco Bar, 7stern, 
+  Kulturhaus Brotfabrik, Club U, Echo Correspondence
+Dataset status end of day
+- dataset.csv: 218 entries
+- venues.csv: ~70 entries, 6-7 new pending tomorrow
+Pending for tomorrow
+- add Status column to venues.csv
+- add 6-7 new venues
+- replace [completar] with correct field values
+- OpenRefine clustering on venue and veranstalter columns
+- upload all to GitHub
+- generate DE/SEMBLE and remaining festival entries
+- add DE/SEMBLE and Sonic Territories to Vereine table
 
 
 
