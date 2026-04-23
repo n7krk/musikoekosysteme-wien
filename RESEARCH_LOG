@@ -87,7 +87,26 @@ Problems
 - separator character conflicts: / breaks URLs, | already used for artist lists - resolved with ;
 New venues identified
 - Replugged, LOK Leben ohne Krankenhaus, Setzkasten Wien, Stadtkino im Künstlerhaus, Rote Bar im Volkstheater, Akademie der Bildenden Künste Wien, St. Ruprecht, Studio Eberhard, Tonspur Festival (outdoor)
-
+April 21-22
+Decisions
+- automated extraction adopted over manual data entry for klingt.org events
+- python scraping script developed to extract all events via POST form submission
+- full temporal coverage 2022-2026 adopted (replaces seasonal sampling strategy - previous decision superseded)
+- deduplication applied to raw dataset before filtering
+- vienna filtering based on cross-reference with venues.csv
+- allerheiligenpark (bezirk 20) and althangrund für alle (bezirk 20) 4lthangrund (9) added as outdoor public space venues
+- arena wien, 7stern, coco bar added to venues.csv
+- dataset strategy: two complementary layers - dataset.csv (96 events, full detail) and klingt_events_vienna.csv (996 events, date/event/venue only)
+Problems
+- klingt.org first scraper with 77240 rows due to multiple duplicate entries - resolved with deduplication script
+- venues.csv separator (comma) different from events CSV (semicolon) - resolved in filter script with textedit
+- textedit on mac changes straight quotes into curly quotes breaking python syntax - use terminal-based editing instead
+- 1bm (Einbaumöbel) not matched due to name discrepancy between venues.csv and klingt.org
+- venues with "aliases" instead of the official name on klingt.org – events tied to this alias venues added manually to the data.csv spreadsheet
+Technical notes
+- scraping performed locally due to server allowlist restrictions
+- tools used: python 3.12, requests, beautifulsoup4
+- AI assistance used for script development and debugging
 
 
 
