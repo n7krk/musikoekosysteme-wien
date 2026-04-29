@@ -1,273 +1,360 @@
 RESEARCH LOG
+Musikalische Ökosysteme in Wien — Vorstudie 2026
 
-/Notes from Obsidian/ 
+---
 
-DECISIONS
 March 31
-	•	markdown files and github commits in english. table field names in german to reflect original austrian data sources. data values preserved in original german	•	Corpus defined by individual Venues, not by musical genre
-	•	OpenRefine tutorial
-	⁃	Key features for the project: Facets and clustering. Text facet, numeric facet, and custom text facet
-	•	Github: Repository created
-	•	Save venue coordinates (lat/lon) in the table → makes QGIS easier
-April 1–6
-	•	DATA COLLECTION PROCESS 
-	⁃	Sources discovery: 
-	⁃	Primary institutional sources (Transparenzportal, data.gv.at, statistik.at) identified through independent web search. 
-	⁃	MA 7 Musikbeirat recommendations PDF identified via wien.gv.at. Community platforms (klingt.org, freemusicforum, phantanoise, esel.at) identified through prior knowledge of the Viennese experimental music scene. 
-	⁃	Temporal scope: 
-	⁃	Analysis period defined as 2022-2026. Rationale: years 2020-2021 excluded due to pandemic-related distortion of cultural activity (venue closures, event cancellations). Period 2022-2026 captures post-pandemic recovery and reconfiguration of the ecosystem. Upper limit set to 2026 to include IFG transparency data (nominative funding records available from September 2025 onward per §40k Transparenzdatenbankgesetz 2012). 
-	⁃	Venue inclusion criteria:
-	⁃	 Venues included if they meet at least one of the following:
-	⁃	 primary or significant programming focus on experimental, improvised, electronic or contemporary music
-	⁃	 documented presence of publicly funded music events 
-	⁃	active role in the independent music scene regardless of formal funding status 
-	⁃	⁃	Venues excluded: spaces with primary focus on visual art only, dance only, or commercial entertainment without documented connection to the field. 
-	⁃	Venues marked:
-	⁃	 * (secondary): present in the scene but programming focus is not primarily music or experimental work. Venues marked 
-	⁃	? (uncertain): institutional or academic context that may fall outside the independent scene scope. Final decision pending further review of programming.
-	⁃	Coordinate verification All venue coordinates verified manually via Google Maps and Google Plus Codes. Entries with unverified coordinates flagged in the table.
-	•	social media screenshots included as valid data source for event documentation
-	•	district calendars established as weekly review source during data collection phase
-	•	contact with Schaltaucherin identified as potential qualitative source (pending)
-April 6–10
-- Break down work into goals → tasks → microtasks
-- Weekly mini-phases for Phase 1 data collection
-April 13
-- Clear criteria established for including a source:
-	- info on venues, events, or funding ~ data from Vienna/period 2022-2024/easily downloadable or extractable format.
-- if the data is difficult to extract, e.g., a PDF instead of a table, note the issue under “problems”
-- sources are tagged here in Obsidian with ✅ / ❌ / ❓
-- Sources marked with ✅ are reviewed for CSV files, direct Excel files, or PDFs (copy them manually)
-. “Venues” table: venue, address, district, focus, website, lat, lon („Veranstaltungsorte“: Veranstaltungsort, Adresse, Bezirk, Schwerpunkt, Website, Breitengrad, Längengrad)
-. “Funding” table: year, amount, funder, category, source („Finanzierung“: Jahr, Betrag, Fördergeber, Kategorie, Quelle)
-. “Sources” table: institution, institution type, information type, URL, format, years, action ( „Quellen“: Einrichtung, Einrichtungstyp, Informationstyp, URL, Format, Jahre, Aktion)
-‘Action’ is defined based on whether the data is downloadable in CSV or Excel format: “Download” („Herunterladen“ )/ if it’s a PDF or web table: “Extract manually” („Manuell extrahieren“/“manuell”) / if the data exists but isn’t public: “Contact” ( „Kontaktieren“ )/ if it’s unusable: “Discard” („Verwerfen“)
-	•	Add “granularity” („Granularität“) column: aggregated, organization, individual (aggregiert, Organisation, Einzelperson).
-	•	Add “limitations” („Einschränkungen“ ) column: complete: full data; partially redacted: partially censored; anonymized: aggregated data without names; incomplete: incomplete for other reasons (vollständig: vollständige Daten; teilweise geschwärzt: teilweise geschwärzt; anonymisiert: aggregierte Daten ohne Namen; unvollständig: unvollständig aus anderen Gründen)
 
-PROBLEMS AND LIMITATIONS
-	•	Sources
-	⁃	statistik.at: limited relevance for this project. cultural/arts data 
- 	 not easily accessible or filterable. source discarded for data collection 
- 	 phase, may be revisited for aggregate context in report writing.
-	⁃	Transparenzportal: funding application data partially redacted. 
-  	personal information censored in PDF documents (see förderungsantrag PDF 
-  	in project folder). limitation documented - affects granularity of 
-  	individual-level analysis.
-	•	Venue classification
-	⁃	some venues host publicly funded experimental music events but are not 
-  	primarily recognized as experimental music spaces. classification criteria 
-  	established in response (see venue inclusion criteria above).
+- language: markdown files and github commits in english. field names in german 
+  (original austrian sources). data values in original german.
+- corpus defined by venue, not genre
+- OpenRefine: key features for this project are facets and clustering
+- github repo created
+- venue coordinates (lat/lon) saved in table — makes QGIS easier later
+
+---
+
+April 1–6
+
+- sources found: Transparenzportal, data.gv.at, statistik.at via web search.
+  MA7 Musikbeirat PDF via wien.gv.at. klingt.org, freemusicforum, esel.at
+  from prior knowledge of the scene.
+- time frame: 2022–2026. 2020–2021 out — pandemic distortion. 2026 upper limit
+  includes IFG transparency data (nominative records from Sept 2025,
+  §40k Transparenzdatenbankgesetz 2012).
+- venue inclusion: at least one of: primary focus on experimental/improvised/
+  electronic/contemporary music; documented publicly funded events; active role
+  in the independent scene regardless of funding status.
+- venues excluded: visual art only, dance only, commercial without scene connection.
+- venue flags: * = secondary (not primarily music); ? = uncertain (academic/
+  institutional context, decision pending).
+- coordinates: verified manually via Google Maps and Google Plus Codes.
+  unverified entries flagged.
+- social media screenshots valid as event documentation source
+- district calendars: weekly review source during data collection
+- schalltaucherin.com: potential qualitative source, contact pending
+
+Problems
+- statistik.at: cultural data not filterable. discarded for now,
+  maybe useful for aggregate context when writing.
+- Transparenzportal: personal data redacted in PDFs. affects granularity
+  of individual-level analysis.
+- some venues host funded experimental events but aren't primarily
+  known as experimental spaces — handled with inclusion criteria above.
+
+---
+
+April 6–10
+
+- work structure: goals → tasks → microtasks
+- weekly mini-phases for data collection phase
+
+---
+
+April 13
+
+- source inclusion criteria: info on venues, events, or funding /
+  Vienna / 2022–2024 / extractable format.
+- hard to extract sources (PDFs etc.) noted under problems.
+- sources tagged in Obsidian: ✅ / ❌ / ❓
+- tables defined:
+  - venues: venue, address, district, programmprofil, website, lat, lon
+  - funding: year, amount, funder, category, source
+  - sources: institution, type, info type, URL, format, years, action, 
+    granularity, limitations
+- action values: Download / Manuell extrahieren / Kontaktieren / Verwerfen
+- granularity values: aggregiert / Organisation / Einzelperson
+- limitations values: vollständig / teilweise geschwärzt / anonymisiert /
+  unvollständig
+
+---
+
 April 14
-- In table quellen_events, the following categories are used for granularity: single event, program, and “aggregated” stays. (Einzelveranstaltung, Programm; „aggregiert“ bleibt erhalten.)
-- Changed “Schwerpunkt” to “Programmprofil” in the venues table. 
-- Add “venue type” („Venue-Typ“) category: concert hall, club, cultural center, studio, pop-up (Konzerthaus, Club, Kulturzentrum, Studio, Pop-up)
+
+- quellen_events granularity: Einzelveranstaltung / Programm / aggregiert
+- "Schwerpunkt" renamed to "Programmprofil" in venues table
+- venue-typ added: Konzerthaus / Club / Kulturzentrum / Studio / Pop-up
+
+---
+
 April 15–16
-- Decided to organize each objective into specific tasks with mini- and micro-tasks to keep moving forward even if conditions change (see tasks)
-- Create a “Vereine” table based on the information in the transparency portal
-- Repository structure:
-- 	READ ME.md
-- 	DECISIONS.md
-- 	dataset.csv: central file → actual events-date-venue-event type-funding reference-source
-- 	venues.csv: physical spaces where events take place
-- 	quellen-foerderungen.csv: data sources on funding
-- 	quellen-events.csv: data sources on events
-- Add the columns “Quellentyp” and “Verwendung” to ‘quellen_venues’
-- Add the column “Klassifizierung” to the venues table: “Kernvenue,” “gemischtes programm,” “gelegentlich,” “unsicher”.
+
+- work organized into objectives → tasks → micro-tasks
+- Vereine table created based on Transparenzportal data
+- repo structure confirmed:
+  - README.md
+  - DECISIONS.md
+  - dataset.csv — events with full detail
+  - venues.csv — physical spaces
+  - quellen-foerderungen.csv — funding sources
+  - quellen-events.csv — event sources
+- quellen_venues: added Quellentyp and Verwendung columns
+- venues: added Klassifizierung column: Kernvenue / gemischtes Programm /
+  gelegentlich / unsicher
+
+---
+
 April 21
-Decisions
-- dataset.csv separator changed from / to ; (standard european CSV, compatible with URLs and artist lists)
-- Radio OE1 included as media venue - broadcast events documented as Radiosendung
-- Dschungel Wien excluded - primary focus children's theater, music incidental
-- Theater am Werk reclassified as gemischtes Programm - music present as central element in some events
-- Rote Bar im Volkstheater added as venue - gemischtes Programm
-- veranstalter field distinguishes between venue and organizing collective (e.g. Free Music Forum at Celeste)
+
+- dataset.csv separator: changed from / to ; (standard european CSV,
+  works with URLs and artist lists)
+- Radio OE1: included as media venue, broadcast events as Radiosendung
+- Dschungel Wien: excluded — children's theater, music incidental
+- Theater am Werk: reclassified as gemischtes Programm
+- Rote Bar im Volkstheater: added as venue, gemischtes Programm
+- veranstalter field: distinguishes venue from organizing collective
+  (e.g. Free Music Forum at Celeste)
+
 Problems
-- ODS format incompatible with direct CSV import - file needs to be saved as CSV before upload to GitHub
-- separator character conflicts: / breaks URLs, | already used for artist lists - resolved with ;
-New venues identified
-- Replugged, LOK Leben ohne Krankenhaus, Setzkasten Wien, Stadtkino im Künstlerhaus, Rote Bar im Volkstheater, Akademie der Bildenden Künste Wien, St. Ruprecht, Studio Eberhard, Tonspur Festival (outdoor)
-April 21-22
-Decisions
-- automated extraction adopted over manual data entry for klingt.org events
-- python scraping script developed to extract all events via POST form submission
-- full temporal coverage 2022-2026 adopted (replaces seasonal sampling strategy - previous decision superseded)
-- deduplication applied to raw dataset before filtering
-- vienna filtering based on cross-reference with venues.csv
-- allerheiligenpark (bezirk 20) and althangrund für alle (bezirk 20) 4lthangrund (9) added as outdoor public space venues
-- arena wien, 7stern, coco bar added to venues.csv
-- dataset strategy: two complementary layers - dataset.csv (96 events, full detail) and klingt_events_vienna.csv (996 events, date/event/venue only)
+- ODS format breaks CSV import — save as CSV before github upload
+- / as separator broke URLs, | already used for artist lists — fixed with ;
+
+New venues
+- Replugged, LOK Leben ohne Krankenhaus, Setzkasten Wien,
+  Stadtkino im Künstlerhaus, Rote Bar im Volkstheater,
+  Akademie der Bildenden Künste Wien, St. Ruprecht,
+  Studio Eberhard, Tonspur Festival (outdoor)
+
+---
+
+April 21–22
+
+- switched to automated extraction for klingt.org — python scraper
+  via POST form submission
+- full 2022–2026 coverage adopted (replaces seasonal sampling)
+- deduplication applied before filtering
+- vienna filtering via cross-reference with venues.csv
+- Allerheiligenpark (20. Bezirk) and 4lthangrund (9. Bezirk) added
+  as outdoor venues
+- Arena Wien, 7stern, Coco Bar added to venues.csv
+- dataset strategy: two layers —
+  dataset.csv (96 events, full detail) +
+  klingt_events_vienna.csv (996 events, date/event/venue only)
+
 Problems
-- klingt.org first scraper with 77240 rows due to multiple duplicate entries - resolved with deduplication script
-- venues.csv separator (comma) different from events CSV (semicolon) - resolved in filter script with textedit
-- textedit on mac changes straight quotes into curly quotes breaking python syntax - use terminal-based editing instead
-- 1bm (Einbaumöbel) not matched due to name discrepancy between venues.csv and klingt.org
-- venues with "aliases" instead of the official name on klingt.org – events tied to this alias venues added manually to the data.csv spreadsheet
-Technical notes
-- scraping performed locally due to server allowlist restrictions
-- tools used: python 3.12, requests, beautifulsoup4
-- AI assistance used for script development and debugging
+- Problems
+- first scraper returned 77,240 rows — deduplication script fixed it
+- venues.csv uses comma, events CSV uses semicolon — fixed in filter script
+- TextEdit changes straight quotes to curly quotes, breaks python — 
+  use terminal instead
+- 1bm (Einbaumöbel) not matched — name discrepancy between venues.csv
+  and klingt.org
+- some venues have aliases on klingt.org — events added manually
+
+Technical
+- scraping done locally (server allowlist restrictions)
+- tools: python 3.12, requests, beautifulsoup4
+- AI used for script development and debugging
+
+---
+
 April 23
-Decisions
-- talks, panels and screenings included in dataset when part of publicly 
-  funded festival programming. rationale: discursive programme integral 
-  to curatorial approach and funding justification, not incidental to 
-  musical events.
+
+- talks, panels, screenings included when part of publicly funded festival
+  programming — discursive programme is integral to curatorial work
+  and funding justification
 - events outside Vienna excluded regardless of artist origin
-- language convention: event names in original source language, 
-  no spanish descriptors
-- multiple funding sources documented with | separator in foerderung_ref
-- foerderung_ref uses institution names not numbers
+- event names in original source language, no spanish
+- multiple funders in foerderung_ref separated with |
+- foerderung_ref uses institution names, not numbers
 - theater productions excluded even when MA7-funded (e.g. Toxic Dreams)
-- funding before September 2025 documented as [nicht verifizierbar - vor IFG]
+- pre-IFG funding documented as [nicht verifizierbar - vor IFG]
   when no direct source available
-New field values established
-- [nicht dokumentiert] - info exists but not publicly available
-- [nicht öffentlich] - deliberately not published (RSVP locations)
-- [manuell rekonstruierbar] - info available via Instagram but 
-  extraction disproportionate to Vorstudie scope
-- [nicht verifizierbar - vor IFG] - funding unverifiable before 
-  IFG law Sept 2025
-New column added to venues.csv
-- Status: aktiv / geschlossen / unbekannt
-  critical for QGIS mapping of ecosystem fragility
+
+Field values established
+- [nicht dokumentiert] — info exists but not publicly available
+- [nicht öffentlich] — deliberately not published (RSVP locations)
+- [manuell rekonstruierbar] — on Instagram but extraction out of scope
+- [nicht verifizierbar - vor IFG] — funding unverifiable before Sept 2025
+
+venues.csv: Status column added: aktiv / geschlossen / unbekannt
+  (important for QGIS mapping of ecosystem fragility)
+
 Festivals documented
-- Unsafe+Sounds 2022-2025 complete
-- Struma+Iodine 2022-2025 complete  
-- DE/SEMBLE 2022-2025 complete
-- Augend&Addend 2024-2025 partial
-Problems and limitations
-- Unsafe+Sounds does not archive past programmes on website
-- DE/SEMBLE uses images for historical content - text not indexable
-- DE/SEMBLE 2022 edition completely undocumented online
-- Come Play Me (Jun 2023) artist names only in flyers/images
-- DE/SEMBLE Intl. Festival 2024 venue not specified in any text source
-- funding before Sept 2025 not directly verifiable via IFG
-- some Struma+Iodine Sonic Agency Listening Sessions 
+- Unsafe+Sounds 2022–2025: complete
+- Struma+Iodine 2022–2025: complete
+- DE/SEMBLE 2022–2025: complete
+- Augend&Addend 2024–2025: partial
+
+Problems
+- Unsafe+Sounds: no programme archive on website
+- DE/SEMBLE: historical content in images, not indexable
+- DE/SEMBLE 2022: completely undocumented online
+- Come Play Me (Jun 2023): artist names only in flyers/images
+- DE/SEMBLE Intl. Festival 2024: venue not specified in any text source
+- pre-IFG funding not directly verifiable
+- some Struma+Iodine Sonic Agency Listening Sessions:
   artist data only on Instagram
-New venues identified today
-- Zacherlfabrik, Pratersauna, Brunnenpassage, Arena Wien, 
+
+New venues
+- Zacherlfabrik, Pratersauna, Brunnenpassage, Arena Wien,
   Kulturzentrum 4lthangrund, ifk, Flex, RRR, Undisclosed Location,
   VE.SCH, WAF Galerie, Kevin Space, Depot, Central Garden,
   Kunsttankstelle Ottakring, Ponyhof, Theater Nestroyhof Hamakom,
   The Loft, Tagada Club, Bears in the Park, ORF Radiokulturhaus,
-  Jazzclub ZWE, Semper Depot, Coco Bar, 7stern, 
+  Jazzclub ZWE, Semper Depot, Coco Bar, 7stern,
   Kulturhaus Brotfabrik, Club U, Echo Correspondence
-Dataset status end of day
-- dataset.csv: 218 entries
-- venues.csv: ~70 entries, 6-7 new pending tomorrow
-Pending for tomorrow
-- add Status column to venues.csv
-- add 6-7 new venues
-- replace [completar] with correct field values
-- OpenRefine clustering on venue and veranstalter columns
-- upload all to GitHub
-- generate DE/SEMBLE and remaining festival entries
-- add DE/SEMBLE and Sonic Territories to Vereine table
-revisar antes de upload
-
-April 24-25
-
-Decisions
-- sonic territories (2022-2024): all editions documented, including extended formats at Rhiz and summer edition at Die Kleine Stadtfarm
-- sonic territories 2024 multi-venue edition collapsed into single row with venue list in brackets - acceptable at this granularity level for Vorstudie scope
-- circuit fantome: documented as Konzertreihe per season, not per episode - floatingsound.at returning 503, full episode index not reconstructable; individual sub-urls functional
-- circuit fantome t2 and t3: partial episode coverage only - noted as limitation, not gap
-- jazzwerkstatt wien: documented as individual concerts (porgy.at pages) + festival week stubs (sept each year) - web archive non-indexable, full festival programmes not recoverable without manual porgy.at review
-- jazzwerkstatt festival 2022 and 2023: entered with empty kuenstler field - intentional, not an error
-- NAWA festival 2022 (1st edition): entered with datum ?? - no verifiable programme data, only facebook mention confirming Iran focus; row retained as structural marker
-- NAWA festival 2023: no edition held, confirmed via festival website
-- NAWA 2024: schalltaucherin.com was the only source providing timetable-level detail for days 1-2
-
-Problems
-- floatingsound.at returning 503 - circuit fantome episode index not reconstructable (pending: check again in coming days)
-- jazzwerkstatt.at internal links require javascript - festival programmes not indexable
-- NAWA 2022 programme completely undocumented online - datum field left as ?? in dataset
-- hamakom subpages for NAWA 2024 (nawa2024_1 through _4) returning 404
-
-New venues identified
-- VHS Kulturgarage Seestadt (22. Bezirk) - sonic territories from 2023 onward
-- Die Kleine Stadtfarm (22. Bezirk) - sonic territories summer 2023, agrarökologische Fläche
-- Vronihof (17. Bezirk) - circuit fantome permanent venue, veronikagasse 24
-- Semmelweisklinik (18. Bezirk) - sonic territories 2024 / AMP workshops
-- AIL / Alte Postsparkasse (1. Bezirk) - sonic territories 2024
-- Minus Offspace (18. Bezirk) - sonic territories 2024
-- Seestadt Studios (22. Bezirk) - sonic territories 2024
-- Studio Praxistest / Angewandte (3. Bezirk) - sonic territories 2024
 
 Dataset status
-- dataset.csv: ~225 entries + 20 rows added today
-- venues.csv: ~70 entries + 8 new venues pending
+- dataset.csv: 218 entries
+- venues.csv: ~70 entries, 6–7 pending
 
-PENDING MAY
-- python/pandas: frequency analysis, temporal patterns
-- matplotlib: basic visualizations
-- qgis: geocoding + exploratory maps
-- cross venues.csv + dataset.csv + quellen-foerderungen.csv
-- foerderung_ref bulk update via IFG data
-- vereine table complete
-- interview candidates identified and contacted
-- interview guide based on dataset patterns
-- obsidian output/ folder: first bericht fragments in german
-- programming historian jupyter notebook
-- openrefine advanced cleaning
-- venue_typ column in venues.csv
-- normalize case in klingt_events_vienna.csv
-- circuit fantome: check floatingsound.at when back online, reconstruct episode index
-- jazzwerkstatt: manual review of porgy.at archive for sept festival programmes
-April 27
-Decisions
-- MA7 Kunst-, Kultur- und Wissenschaftsbericht (annual, wienbibliothek.at) confirmed as primary pre-IFG funding source with named recipients and amounts. available for 2022, 2023, 2024 as PDFs. extraction via pdfplumber planned for may. 
-- Förderbericht der Stadt Wien 2022 identified (wien.gv.at) - broader city funding data. 
-- BMKöS: named recipient lists exist on web but no CSV download - manual extraction or scraper needed, lower priority than MA7 Kulturbericht.
-- struma+iodine verein confirmed as Resonances+Transitions across all editions -
-  single entry in vereine table, no name change
-- recurring series (Monday Improvisers Session, Der Blöde Dritte Mittwoch,
-  small forms) documented as one representative row per year in dataset.csv -
-  frequency analysis delegated to klingt_events_vienna.csv in may
-- wien.gv.at/spezial/foerderbericht/kultur-und-wissenschaft/ma-7-kultur/
-  identified as high-value source - MA7 funding disaggregated by programme type,
-  extraction with pdfplumber planned for may
-- Jahresendzeitschokoladenhohlkörper: veranstalter field = XOK; 20+ participating
-  initiatives documented in klingt web, not individually listed in verein field
-- instruments excluded from kuenstler field - names only
-- events outside Vienna excluded (Die Strottern @ Museumarbeitswelt Steyr 15.03.2023
-  confirmed out of corpus)
-- Circuit Fantome Grand Finale 09.12.2023: venue = Klangtheater (not Vronihof) -
-  needs correction in dataset
+---
+
+April 24–25
+
+- Sonic Territories 2022–2024: all editions in, including Rhiz extended
+  formats and summer edition at Die Kleine Stadtfarm
+- Sonic Territories 2024 multi-venue: one row with venue list in brackets —
+  fine for this scope
+- Circuit Fantôme: one row per season, not per episode —
+  floatingsound.at returning 503, full index not reconstructable
+- Circuit Fantôme T2 and T3: partial coverage, noted as limitation
+- Jazzwerkstatt Wien: individual concerts from porgy.at +
+  festival week stubs (Sept each year) — full programmes not recoverable
+  without manual porgy.at review month by month
+- Jazzwerkstatt festival 2022 and 2023: kuenstler field empty intentionally
+- NAWA 2022: datum = 2022-00-00 — no programme data online,
+  only Facebook mention confirming Iran focus. row kept as structural marker.
+- NAWA 2023: no edition held, confirmed via festival website
+- NAWA 2024: schalltaucherin.com only source with timetable-level
+  detail for days 1–2
+
 Problems
-- porgy.at ticket order URLs not valid as quelle - use event pages only
-- Jahresendzeitschokoladenhohlkörper 2022 edition not confirmed in archive -
+- floatingsound.at: 503 error, circuit fantome index not reconstructable
+- jazzwerkstatt.at: javascript-dependent links, not indexable
+- NAWA 2022 programme completely undocumented online
+- hamakom subpages for NAWA 2024 returning 404
+
+New venues
+- VHS Kulturgarage Seestadt (22. Bezirk)
+- Die Kleine Stadtfarm (22. Bezirk)
+- Vronihof (17. Bezirk) — veronikagasse 24, Circuit Fantôme permanent venue
+- Semmelweisklinik (18. Bezirk)
+- AIL / Alte Postsparkasse (1. Bezirk)
+- Minus Offspace (18. Bezirk)
+- Seestadt Studios (22. Bezirk)
+- Studio Praxistest / Angewandte (3. Bezirk)
+
+Dataset status
+- dataset.csv: ~245 entries
+- venues.csv: ~70 entries + 8 pending
+
+---
+
+April 27
+
+- MA7 Kunst-, Kultur- und Wissenschaftsbericht (annual, wienbibliothek.at):
+  confirmed as primary pre-IFG source with named recipients and amounts.
+  available 2022–2024 as PDFs. extraction with pdfplumber in may.
+- Förderbericht der Stadt Wien (wien.gv.at): broader city funding data,
+  identified as useful.
+- BMKöS recipient lists exist online but no CSV — lower priority than
+  MA7 Kulturbericht.
+- Struma+Iodine verein: Resonances+Transitions across all editions.
+  single entry in vereine table.
+- recurring series (Monday Improvisers, Blöde Dritte Mittwoch, small forms):
+  one documented event per year in dataset.csv. frequency analysis
+  goes to klingt_events_vienna.csv in may.
+- wien.gv.at/spezial/foerderbericht/kultur-und-wissenschaft/ma-7-kultur/:
+  MA7 funding by programme type — high value source, pdfplumber in may.
+- Jahresendzeitschokoladenhohlkörper: veranstalter = XOK.
+  20+ participating initiatives not listed individually in verein field.
+- instruments out of kuenstler field — names only.
+- Die Strottern @ Museumarbeitswelt Steyr 15.03.2023: out of corpus
+  (outside Vienna).
+- Circuit Fantôme Grand Finale 09.12.2023: venue = Klangtheater,
+  not Vronihof — correction needed in dataset.
+
+Problems
+- porgy.at ticket order URLs not valid as quelle — event pages only
+- Jahresendzeitschokoladenhohlkörper 2022: not confirmed in archive,
   website shows 2020, 2023, 2024 only
-- struma+iodine pre-2024 verein structure not fully documented
-- floating sound gallery episodes still incomplete due to floatingsound.at 503
-New venues identified
-- AIL / Alte Postsparkasse confirmed: Universität für angewandte Kunst Wien,
-  georg-coch-platz 2, 1010 wien
+- floatingsound.at still 503
+
+New venues
+- AIL confirmed: Universität für angewandte Kunst Wien,
+  Georg-Coch-Platz 2, 1010 Wien
+
 Dataset status
 - dataset.csv: ~250 entries
 - venues.csv: ~70 entries + 8 pending coordinates
+
+---
+
+April 29
+
+- git workflow: switched to terminal (git add / commit / push) from today.
+  previous web interface uploads valid but no descriptive commit messages.
+  no data lost.
+- foerderung_ref: unified via sed batch replace —
+  Stadt Wien Kultur / Staft Wien Kultur / MA7 Wien Kultur → MA7
+  BMWKMS / BMKOES / BMKÖS → BMKöS
+- MA7 is the canonical term (shorter, official, better for pandas groupby)
+- WKO excluded from foerderung_ref — it's commercial sponsorship.
+  distinction established:
+  public funding: MA7, BMKöS, Bezirkskultur
+  parafiscal: AKM, SKE, Musikfonds
+  private: WKO, corporate — only first two go in foerderung_ref
+- KÖR Wien: funding body for outdoor events, not a Verein —
+  goes in foerderung_ref, not verein field
+- radio broadcasts (Radio OE1 / ORF): removed from dataset —
+  no spatial distribution, outside corpus definition
+- theater productions: confirmed out (Theater am Werk -
+  Da war ich nicht mehr da, 2 rows removed)
+- recurring series: one real documented event per year, no generic
+  placeholders. gaps are a documented limitation, covered by
+  klingt_events_vienna.csv
+- smallforms venue: Chateau Rouge (8. Bezirk), not Echoraum.
+  wrong entries corrected.
+- Der Blöde Dritte Mittwoch: Theater am Werk (1. Bezirk) through 2025,
+  Echoraum (15. Bezirk) from April 2026 — venue shift after several years.
+  flagged for interviews.
+- Musikbeirat amounts: go in vereine table, not in foerderung_ref
+- Vienna Club Commission: specific MA7 instrument for club/venue funding.
+  Flucc funded via this programme.
+- AIL: venue that hosts independent scene actors, not itself part of
+  the MA7 funding ecosystem. Unsafe+Sounds used it in 2025.
+  goes in venue field only.
+- liccht - kulturverein für nischenmusik und populärkultur: confirmed
+  via liccht.at/about. Musikbeirat 2026: 12.000€
+- pre-IFG opacity treated as structural finding, not methodological gap:
+  absence of centralized public funding data for 2022–2024 reflects
+  how the ecosystem operates. who has access to funding information
+  (organizations, MA7 officials, insiders) and who doesn't
+  (researchers, public, new actors) is itself a finding about
+  power structures. interview guide will address this directly.
+- venue coordinates verified manually via Google Maps
+
+Vereine clarified
+- Verein Kulturzentrum FLUCC: ZVR 1842290121, Praterstern 5, 1020 Wien.
+  funded via MA7 Vienna Club Commission.
+- Verein Freifall: confirmed via igkultur.at/mitglieder
+- IGNM: registered institution, not a Verein in formal sense
+- Universität für angewandte Kunst Wien: public university, not a Verein
+- small forms - Verein zur Förderung und Verbreitung von zeitgenössischen
+  Musikformen: confirmed
+- Resonances+Transitions: Struma+Iodine verein across all editions.
+  name changed from STRUMA+IODINE Verein zur Erweiterung musikalischer
+  Erfahrungsräume at January 2024.
+- FAM Kulturverein: confirmed for NAWA 2024 only.
+  pre-2024 editions: [nicht dokumentiert]
+- Studio Dan: no independent Verein. operates under Verein echoraum.
+  veranstalter only, not verein field.
+- loewenhertz: label, not a Verein — [nicht dokumentiert]
+- charhizma: label, not a Verein — [nicht dokumentiert]
+- liccht - kulturverein für nischenmusik und populärkultur: confirmed
+
+New venues
+- Chateau Rouge (12. Bezirk) — confirmed primary venue for smallforms
+- Klangtheater MDW (3. Bezirk) — Circuit Fantôme grand finale 09.12.2023,
+  corrected from Vronihof
+
 Sources
-- wien.gv.at/spezial/foerderbericht MA7 confirmed as pre-IFG funding source -
-  disaggregated by programme, accessible online
-PENDING MAY
-- python/pandas: frequency analysis, temporal patterns
-- matplotlib: basic visualizations
-- qgis: geocoding + exploratory maps
-- cross venues.csv + dataset.csv + quellen-foerderungen.csv
-- foerderung_ref bulk update via IFG data (Sept 2025 onward)
-- MA7 Kulturbericht + Foerderbericht extraction with pdfplumber
-- vereine table: openrefine clustering for name variants, manual decisions
-  for informal collectives
-- interview candidates identified and contacted
-- interview guide (include pre-IFG opacity as explicit theme)
-- obsidian output/ folder: first bericht fragments in german
-- programming historian jupyter notebook
-- openrefine advanced cleaning
-- venue_typ column in venues.csv
-- normalize case in klingt_events_vienna.csv
-- schalltaucherin scraper (playwright)
-- monday improvisers / blöde dritte / small forms: one row per year strategy
-- circuit fantome venue correction (klangtheater for grand finale 09.12.2023)
-
-
+- Wien.gv.at Förderbericht MA7:
+  wien.gv.at/spezial/foerderbericht/kultur-und-wissenschaft/ma-7-kultur/
+- BMKöS Kunst- und Kulturberichte (annual PDFs):
+  bmkws.gv.at/themen/kunst-und-kultur/service-kunst-und-kultur/
+  publikationen/kunst-und-kulturberichte.html
+  (~18 entries added to quellen-foerderungen.csv)
+- ViennaSonnet 4.6AdaptativoClaude es IA y puede cometer errores. Por favor, verifica nuevamente las respuestas.
