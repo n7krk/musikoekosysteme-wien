@@ -164,6 +164,110 @@ Pending for tomorrow
 - upload all to GitHub
 - generate DE/SEMBLE and remaining festival entries
 - add DE/SEMBLE and Sonic Territories to Vereine table
+revisar antes de upload
 
+April 24-25
+
+Decisions
+- sonic territories (2022-2024): all editions documented, including extended formats at Rhiz and summer edition at Die Kleine Stadtfarm
+- sonic territories 2024 multi-venue edition collapsed into single row with venue list in brackets - acceptable at this granularity level for Vorstudie scope
+- circuit fantome: documented as Konzertreihe per season, not per episode - floatingsound.at returning 503, full episode index not reconstructable; individual sub-urls functional
+- circuit fantome t2 and t3: partial episode coverage only - noted as limitation, not gap
+- jazzwerkstatt wien: documented as individual concerts (porgy.at pages) + festival week stubs (sept each year) - web archive non-indexable, full festival programmes not recoverable without manual porgy.at review
+- jazzwerkstatt festival 2022 and 2023: entered with empty kuenstler field - intentional, not an error
+- NAWA festival 2022 (1st edition): entered with datum ?? - no verifiable programme data, only facebook mention confirming Iran focus; row retained as structural marker
+- NAWA festival 2023: no edition held, confirmed via festival website
+- NAWA 2024: schalltaucherin.com was the only source providing timetable-level detail for days 1-2
+
+Problems
+- floatingsound.at returning 503 - circuit fantome episode index not reconstructable (pending: check again in coming days)
+- jazzwerkstatt.at internal links require javascript - festival programmes not indexable
+- NAWA 2022 programme completely undocumented online - datum field left as ?? in dataset
+- hamakom subpages for NAWA 2024 (nawa2024_1 through _4) returning 404
+
+New venues identified
+- VHS Kulturgarage Seestadt (22. Bezirk) - sonic territories from 2023 onward
+- Die Kleine Stadtfarm (22. Bezirk) - sonic territories summer 2023, agrarökologische Fläche
+- Vronihof (17. Bezirk) - circuit fantome permanent venue, veronikagasse 24
+- Semmelweisklinik (18. Bezirk) - sonic territories 2024 / AMP workshops
+- AIL / Alte Postsparkasse (1. Bezirk) - sonic territories 2024
+- Minus Offspace (18. Bezirk) - sonic territories 2024
+- Seestadt Studios (22. Bezirk) - sonic territories 2024
+- Studio Praxistest / Angewandte (3. Bezirk) - sonic territories 2024
+
+Dataset status
+- dataset.csv: ~225 entries + 20 rows added today
+- venues.csv: ~70 entries + 8 new venues pending
+
+PENDING MAY
+- python/pandas: frequency analysis, temporal patterns
+- matplotlib: basic visualizations
+- qgis: geocoding + exploratory maps
+- cross venues.csv + dataset.csv + quellen-foerderungen.csv
+- foerderung_ref bulk update via IFG data
+- vereine table complete
+- interview candidates identified and contacted
+- interview guide based on dataset patterns
+- obsidian output/ folder: first bericht fragments in german
+- programming historian jupyter notebook
+- openrefine advanced cleaning
+- venue_typ column in venues.csv
+- normalize case in klingt_events_vienna.csv
+- circuit fantome: check floatingsound.at when back online, reconstruct episode index
+- jazzwerkstatt: manual review of porgy.at archive for sept festival programmes
+April 27
+Decisions
+- MA7 Kunst-, Kultur- und Wissenschaftsbericht (annual, wienbibliothek.at) confirmed as primary pre-IFG funding source with named recipients and amounts. available for 2022, 2023, 2024 as PDFs. extraction via pdfplumber planned for may. 
+- Förderbericht der Stadt Wien 2022 identified (wien.gv.at) - broader city funding data. 
+- BMKöS: named recipient lists exist on web but no CSV download - manual extraction or scraper needed, lower priority than MA7 Kulturbericht.
+- struma+iodine verein confirmed as Resonances+Transitions across all editions -
+  single entry in vereine table, no name change
+- recurring series (Monday Improvisers Session, Der Blöde Dritte Mittwoch,
+  small forms) documented as one representative row per year in dataset.csv -
+  frequency analysis delegated to klingt_events_vienna.csv in may
+- wien.gv.at/spezial/foerderbericht/kultur-und-wissenschaft/ma-7-kultur/
+  identified as high-value source - MA7 funding disaggregated by programme type,
+  extraction with pdfplumber planned for may
+- Jahresendzeitschokoladenhohlkörper: veranstalter field = XOK; 20+ participating
+  initiatives documented in klingt web, not individually listed in verein field
+- instruments excluded from kuenstler field - names only
+- events outside Vienna excluded (Die Strottern @ Museumarbeitswelt Steyr 15.03.2023
+  confirmed out of corpus)
+- Circuit Fantome Grand Finale 09.12.2023: venue = Klangtheater (not Vronihof) -
+  needs correction in dataset
+Problems
+- porgy.at ticket order URLs not valid as quelle - use event pages only
+- Jahresendzeitschokoladenhohlkörper 2022 edition not confirmed in archive -
+  website shows 2020, 2023, 2024 only
+- struma+iodine pre-2024 verein structure not fully documented
+- floating sound gallery episodes still incomplete due to floatingsound.at 503
+New venues identified
+- AIL / Alte Postsparkasse confirmed: Universität für angewandte Kunst Wien,
+  georg-coch-platz 2, 1010 wien
+Dataset status
+- dataset.csv: ~250 entries
+- venues.csv: ~70 entries + 8 pending coordinates
+Sources
+- wien.gv.at/spezial/foerderbericht MA7 confirmed as pre-IFG funding source -
+  disaggregated by programme, accessible online
+PENDING MAY
+- python/pandas: frequency analysis, temporal patterns
+- matplotlib: basic visualizations
+- qgis: geocoding + exploratory maps
+- cross venues.csv + dataset.csv + quellen-foerderungen.csv
+- foerderung_ref bulk update via IFG data (Sept 2025 onward)
+- MA7 Kulturbericht + Foerderbericht extraction with pdfplumber
+- vereine table: openrefine clustering for name variants, manual decisions
+  for informal collectives
+- interview candidates identified and contacted
+- interview guide (include pre-IFG opacity as explicit theme)
+- obsidian output/ folder: first bericht fragments in german
+- programming historian jupyter notebook
+- openrefine advanced cleaning
+- venue_typ column in venues.csv
+- normalize case in klingt_events_vienna.csv
+- schalltaucherin scraper (playwright)
+- monday improvisers / blöde dritte / small forms: one row per year strategy
+- circuit fantome venue correction (klangtheater for grand finale 09.12.2023)
 
 
