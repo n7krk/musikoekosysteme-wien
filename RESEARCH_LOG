@@ -357,4 +357,69 @@ Sources
   bmkws.gv.at/themen/kunst-und-kultur/service-kunst-und-kultur/
   publikationen/kunst-und-kulturberichte.html
   (~18 entries added to quellen-foerderungen.csv)
-- ViennaSonnet 4.6AdaptativoClaude es IA y puede cometer errores. Por favor, verifica nuevamente las respuestas.
+
+April 30, 2026 — END OF PHASE 1: Data Collection
+
+Decisions
+- venue_typ column added to venues.csv as second column after venue name.
+  5 filterable categories: Club / Kulturzentrum / Studio / Konzerthaus / Offspace.
+  categories don't capture the full complexity of each space's practice —
+  this is intentional. the field is for QGIS filtering, not ethnographic description.
+  additional categories added where needed: Kirche / Akademisch / Außenraum / Museum.
+- venues removed from venues.csv (10 total): Echoraeume (no physical space),
+  Radio OE1 duplicate, Die Kleine Stadtfarm, Splitart Projects, Tanzquartier Wien,
+  Das LOT, Bears in the Park, Polnisches Institut Wien, Bezirksmuseum Leopoldstadt,
+  Schmähfabrik. events from these venues remain in dataset.csv where documented.
+- Floating Sound Gallery Vienna clarified: not a venue, it's the organization
+  that operates at Vronihof. Floating Sound Gallery removed from venues.csv,
+  Vronihof is the correct spatial entry.
+- Ex Machinis Musicae: classified as Kernvenue — active within the funding circuit,
+  founder documented as giving workshops on how to apply for public funding.
+  flagged for event documentation and interview in may.
+- klingt_events_vienna.csv: case normalization applied to venue names —
+  997 entries, ready for cross-reference with venues.csv in may.
+- venues without events in either dataset (k48, NODE Media Lab,
+  Mz*Baltazar's Laboratory, hoast, discotec, Amann Studios):
+  kept in venues.csv as gelegentlich ~ cross-reference with klingt in may
+  will determine if they stay or go.
+- new venues added from Independent Space Index
+  (independentspaceindex.at): k48 (7. Bezirk), NODE Media Lab (4. Bezirk,
+  ORF Funkhaus), Mz*Baltazar's Laboratory (20. Bezirk), hoast (2. Bezirk),
+  discotec (4. Bezirk). all classified as Offspace.
+
+Problems
+- 2venues.csv identified as earlier version of venues.csv ~
+  venues.csv is the active file going forward
+- some venue coordinates still approximate — full verification in QGIS phase
+- Ex Machinis Musicae, Minciospace, EKH: present in venues.csv
+  without events in dataset.csv — pending event documentation in may
+
+Dataset status — END OF PHASE 1
+- dataset.csv: 285 entries, full detail, verified
+- venues.csv: 86 entries, coordinates verified, venue_typ complete
+- quellen-foerderungen.csv: 18 entries
+- quellen-events.csv: 11 entries
+- klingt_events_vienna.csv: 997 entries, case normalized
+
+PENDING MAY
+- python/pandas: frequency analysis, temporal patterns
+- matplotlib: basic visualizations
+- qgis: geocoding + exploratory maps
+- cross venues.csv + dataset.csv + klingt_events_vienna.csv
+- foerderung_ref bulk update via IFG data (Sept 2025 onward)
+- MA7 Kulturbericht + Förderbericht extraction with pdfplumber
+- MA7 Vienna Club Commission: which venues received funding, which years
+- vereine table: openrefine clustering for remaining name variants
+- interview candidates identified and contacted
+- interview guide (pre-IFG opacity and venue funding structures as themes)
+- obsidian output/ folder: first bericht fragments in german
+- programming historian jupyter notebook
+- openrefine advanced cleaning
+- normalize case in klingt_events_vienna.csv ✅ done
+- schalltaucherin scraper (playwright)
+- SUENA festival: 2023-2025 complete ✅ done
+- Augend&Addend: 2022-2024 complete ✅ done
+- Ex Machinis Musicae: event documentation + interview candidate
+- Minciospace, EKH, hoast, k48, discotec: cross-reference with klingt
+- README.md: documentation per CSV (what, how, why, what for)
+- Floating Sound Gallery correction in dataset.csv: venue → Vronihof
