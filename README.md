@@ -2,17 +2,16 @@ Musikalische Ökosysteme in Wien — Vorstudie 2026
 
 Exploratory study on the spatial distribution of music events and public funding 
 structures within Vienna's independent experimental and electronic music scene.
-Funded by MA7 (Stadt Wien, €3.000). Final report due September 30, 2026.
-
+Funded by MA7 (Stadt Wien). 
 ---
 
 Repository Structure
 
 dataset.csv
-**What:** Central registry of documented music events in Vienna's independent 
+What:Central registry of documented music events in Vienna's independent 
 experimental and electronic scene, 2022–2026.
 
-Contains:One row per event with: date, venue, event name, event type, 
+Contains: One row per event with: date, venue, event name, event type, 
 district (Bezirk), artists, organizer, responsible Verein, funding references, 
 and documentation source.
 
@@ -21,7 +20,7 @@ klingt.org, esel.at, schalltaucherin.com, Instagram, porgy.at) combined with
 automated scraping of klingt.org using Python/BeautifulSoup4. All methodological 
 decisions documented in RESEARCH_LOG.md.
 
-Why it exists:Enables cross-referencing of events with venues (spatial 
+Why it exists: Enables cross-referencing of events with venues (spatial 
 distribution) and funding sources (public support structures). Primary input for 
 frequency analysis in pandas and spatial visualization in QGIS.
 
@@ -31,7 +30,7 @@ data before the IFG transparency law. Recurring series (Monday Improvisers Sessi
 smallforms, etc.) documented with one real entry per year — full frequency available 
 in klingt_events_vienna.csv.
 
-Separator:** semicolon (;). Multiple values within fields separated by pipe (|).
+Separator: semicolon (;). Multiple values within fields separated by pipe (|).
 
 ---
 
@@ -86,7 +85,7 @@ of temporal and venue patterns not visible in the manual dataset.
 Limitations: Coverage limited to venues indexed on klingt.org. No artist or 
 funding data.
 
-Separator:** semicolon (;).
+Separator: semicolon (;).
 
 ---
 
