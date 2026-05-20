@@ -12,7 +12,7 @@ March 31
 - github repo created
 - venue coordinates (lat/lon) saved in table — makes QGIS easier later
 
----
+*DATA COLLECTION*
 
 April 1–6
 
@@ -423,3 +423,86 @@ PENDING MAY
 - Minciospace, EKH, hoast, k48, discotec: cross-reference with klingt
 - README.md: documentation per CSV (what, how, why, what for)
 - Floating Sound Gallery correction in dataset.csv: venue → Vronihof
+
+*ANALYSIS*
+
+May 6
+
+- jupyter notebook configured and operational. dataset.csv loaded with pandas (sep=',', encoding='utf-8-sig', quotechar='"'). 283 rows, 10 columns confirmed after git merge conflict cleanup.
+- first explorations: value_counts by Bezirk and Event_Typ.
+- Bezirk distribution: concentration in 1 (49), 2 (39), 17 (31), 9 (25), 8 (25). dirty values: – and nicht öffentlicht, to clean with OpenRefine.
+- Event_Typ: 26 distinct values due to fragmentation. Konzert (98), Festival (84), Konzertreihe (46) dominate.
+- klingt_events_vienna.csv loaded (996 rows, 3 columns). top venues: celeste (256), echoraum (233), studio eberhard (56). duplicates: echoraum/echoraeume/echoraeume fs2, theater am werk variants.
+- venues.csv moved to musikoekosysteme-wien/ folder.
+
+May 7
+
+- venue name normalization: str.lower().str.strip() applied to venues and klingt.
+- merge klingt + venues on venue name: 799/996 events matched (80.1%). 197 without match — echoraeume fs2 (38), theater am werk / petersplatz (34), chateau rouge (32), theater am werk / kabelwerk (20).
+- Datum column converted to datetime64 with pd.to_datetime().
+- temporal series by month: peaks April–May and September–October. summer near-empty. 2025 coverage limited.
+- graphs exported: bezirk_frecuencia.png, klingt_venue_frecuencia.png, frecuencia_eventos_mes.png.
+
+Problems
+
+- venues.csv was outside repo folder — moved manually
+- git merge conflicts in dataset.csv Datum column (3 rows) — cleaned before analysis
+- 197 klingt events without bezirk match due to name variants
+- Event_Typ fragmentation (26 values)
+
+May 11–12
+
+OpenRefine — klingt_events_vienna.csv venue name cleaning
+
+- echoraeume fs2 merged to echoraeume
+- rhizom removed — Linz venue, scraper error
+- minciospace_ corrected to minciospace
+- st. ruprecht variants merged to st. ruprecht
+- klangtheater and mdw merged to klangtheater future art lab mdw
+- château rouge corrected — kunstraum suffix removed, accent added
+- althangrund für alle confirmed as separate entry from 4lthangrund (bezirk 12 vs 9)
+- theater am werk / petersplatz and theater am werk / kabelwerk kept as-is — venues.csv to be updated with two separate rows
+- all venue names kept lowercase for pandas join via .str.lower()
+
+dataset.csv — Bezirk column cleaning
+
+- "–" → [kein Bezirk]
+- "Undisclosed Location" → [nicht öffentlich]
+- "nicht öffentlicht" (typo) → [nicht öffentlich]
+
+Problems
+
+- event_name truncation: ~220 entries with "..." — scraper artifact, no action needed
+- separator mismatch on OpenRefine import — reimported with explicit ; separator
+
+Pending
+
+- venues.csv: theater am werk split into two rows
+- venues.csv: château rouge name correction
+- klingt_events_vienna.csv cleaned version not yet committed to github
+
+May 20
+
+- vereine table created. columns: Verein;ZVR-Zahl;Bezirk;Foerderung_ref;Typ;
+  Jahr;Betrag_EUR;Quelle;Anmerkungen.
+  Typ values: Beschluss / Empfehlung / Bezirksförderung.
+- Förderbericht der Stadt Wien 2024 extracted manually as primary source
+  for MA7 Beschluss entries. resolves pdfplumber for 2024 — data already
+  in table. 2022–2023 still pending (wienbibliothek.at PDFs).
+- Infodat Wien (Gemeinderat actas) added as second source for multi-year
+  Beschlüsse. added to quellen-foerderungen.csv.
+- confirmed multi-year funding from Gemeinderat actas:
+  echoraum 110k/yr 2024–2026, studio dan 100k/yr 2024–2026,
+  porgy & bess 170k/yr 2024–2026, PHACE 130k 2024–2025 / 120k 2026.
+- ~50 vereine from Förderbericht 2024 added. raw table: ~125 entries,
+  deduplication and bezirk completion pending.
+- clubkultur inclusion criteria confirmed: MA7 funding documented +
+  explicit curatorial positioning. SISTERS, FLUCC (160k 2026),
+  Disorder Fast & Nice included.
+- ZVR-Zahl: not prioritized. left blank where not immediately available.
+- pdfplumber for MA7 Kulturbericht 2022–2023: deferred.
+
+Pending
+- vereine table: deduplication, bezirk completion, Musikbeirat Empfehlungen.
+- pandas bezirk cross-reference (vereine + dataset + klingt).
+- contact Samo, Haruki, Tahereh for interviews.
