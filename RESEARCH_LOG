@@ -506,3 +506,29 @@ Pending
 - vereine table: deduplication, bezirk completion, Musikbeirat Empfehlungen.
 - pandas bezirk cross-reference (vereine + dataset + klingt).
 - contact Samo, Haruki, Tahereh for interviews.
+
+May 22
+
+- loaded dataset, venues, vereine, klingt into jupyter (notebook: cruces)
+- built bezirk cross-reference: dataset_bezirk, klingt_bezirk, fin_bezirk
+- full merge: events + MA7 funding by bezirk
+- key finding: bezirk 3 concentration (1.3M EUR) explained by Wien Modern 
+  domicile, not actual activity there. verein domicile ≠ programming location.
+- bezirk 6 high activity (256 klingt events), low documented funding (18k) —
+  reflects clubkultur logic, different funding structure
+- bezirk 15 strongest combination of activity and funding — echoraum as 
+  central actor
+- venues audit: venues_21.csv confirmed as official version (72 rows, 
+  Theater am Werk split, Setzkasten and ZWE added). venues_raw and 
+  venuesnoidea moved out of repo.
+- vereine updated: 184 entries total, MA7 + BMWKmS + Gemeinderat data added
+- git synced
+
+Pending
+- complete bezirk column in vereine (affects funding map accuracy)
+- re-run cruce with updated venues and vereine
+- BMWKmS cross-reference
+- generate charts in jupyter
+- write first lines of bericht intro
+- organize project files
+– load files to external hard drive
