@@ -532,3 +532,183 @@ Pending
 - write first lines of bericht intro
 - organize project files
 – load files to external hard drive
+DATA COLLECTION — CLOSING PHASE
+ 
+May 25–27
+Vereine table: comprehensive scan of Kunst- und Kulturbericht des Bundes 2022, 2023, and 2024
+(BMKöS). Systematic extraction of all entries under Musik — Jahresprogramme, Projekte, and
+Festspiele. Table grew from ~192 to 246 entries. Key decisions:
+ 
+  – All entries from Kunst- und Kulturbericht des Bundes assigned Foerderung_ref = BMKöS,
+    not BMWKmS. Earlier entries had the wrong ministerial attribution; corrected in batch via
+    OpenRefine text facet.
+  – Foerderung_ref = BMWKmS reserved exclusively for entries sourced from BMWKmS
+    Schreiben (direct ministerial letters, e.g. GZ 2026-0.020.894 for Studio Dan
+    Zweijahrestätigkeit).
+  – Kompositionsförderung excluded from vereine table — individual grant to person for
+    specific work, distinct logic from organizational funding.
+  – Entries with Betrag_EUR in format "50.000,00" normalized to integer without punctuation
+    (50000) throughout.
+  – WUK: multiple entries across years appear under different names (WUK Kunsthalle
+    Exnergasse, WUK Kulturprogramme und -vermittlung). Consolidated to canonical name
+    "WUK – Verein zur Schaffung offener Kultur- und Werkstättenhäuser" with same ZVR
+    (535133641*) and Anmerkungen noting sub-venue. ZVR pending verification.
+  – FAM Kulturverein: domicile is Klagenfurt, not Vienna. Bezirk field uses [Klagenfurt].
+    Relevant because FAM receives MA7 funding for NAWA festival, which takes place in Vienna.
+    Structural finding: MA7 funding actor domiciled outside Vienna.
+  – Rantasa + Rantasa GmbH: rhiz operates through this entity. GmbH, not Verein. Typ field
+    reflects this. Included because it is the primary legal vehicle for MA7 funding at rhiz.
+  – Klangforum Wien: appears with 1.140.000 EUR in MA7 2024. Not present in dataset or venues
+    — programs at Musikverein and Konzerthaus, outside corpus scope. Added to vereine with
+    Anmerkungen: "kein Venue im Corpus. Außerhalb des definierten Korpus."
+  – Salam Oida: Muslim*Contemporary festival. Multidisciplinary. Added to vereine as actor
+    with documented funding; no events added to dataset pending identification of specific
+    music-focused events with venue.
+  – al-Serori and Eberhard Alexander J: Einzelpersonen with direct BMKöS funding. ZVR field
+    uses [Einzelperson].
+  – Vienna.ACTS: funds both Salam Music & Arts Festival and DE/SEMBLE under different
+    categories. Two separate rows per year where applicable.
+  – sp ce: appears under both Medienkunst and Musik und darstellende Kunst categories. Two
+    rows kept — different Maßnahmen, different funding logic.
+ 
+New entries identified and added: Between Feathers, MOOZAK, Reconsil, punctum collective,
+small forms, ensemble N (fully named: "ensemble N - Verein und Ensemble für zeitgenössische
+Musik"), czirp czirp, snim, tonWerk, MusicScapes, SAMA, On the Couch, sp ce, RESONANCES+
+TRANSITIONS (Struma+Iodine's legal entity), ECHOLOT, Engelsharfen+Teufelsgeigen, Bestand,
+Klang.Kunst.Etage, Kulturverein Serious Serious, Akusmonautikum, Althangrund. Total vereine
+entries at end of week: 266.
+ 
+Schalltaucherin.com entries: finalized and added to dataset_wip.csv. 46 events from archive
+(Oct 2023 – Jun 2025). Artist name formatting: band members separated by | inside parentheses
+(e.g. "schtum (Robert Pockfuß|Manu Mayr)") consistent with project convention. Multi-day
+events (24 Stunden mit Jazzwerkstatt, 20 Jahre Jazzwerkstatt Wien) kept as individual rows per
+act rather than aggregated — reflects source structure.
+ 
+ORF entries: removed entirely from dataset and vereine. Radio broadcast events are not in
+corpus scope (venue criterion). Affects ~8 entries.
+ 
+Transparenzportal IFG (transparenzportal.gv.at): accessed for first time as active source.
+Searched by organization name for: Wien Modern, Porgy & Bess, WUK, Studio Dan, liccht,
+echoraum, The Acousmatic Project, id/l, Bestand, Semmelweisklinik, FAM Kulturverein,
+Central Garden, Between Feathers, MOOZAK, On the Couch, PHACE, RESONANCES+TRANSITIONS,
+RRRIOT, Rantasa, Reconsil, SISTERS, Salam Oida, VEIM, VEKKS, VELAK, Ventil, FLUCC,
+Neuen Musik im Kirchenraum, Vienna.ACTS, XOK, czirp czirp, ensemble N, moment collective,
+punctum collective, small forms, sp ce, snim. 2025 and 2026 data available for all.
+ 
+Key observation from Transparenzportal search: several vereine expected to appear (UNSAFE
+SOUNDS, STRUMA+IODINE, JazzWerkstatt Wien, PARKEN, ExMachinisMusicae, Free Music
+Forum, Peer to Peer, Sandkasten Syndikat, Sounds Queer, Setzkasten, Klangmanifeste,
+Platypus) return no results or only partial results. Consistent with pre-existing finding: IFG
+§40k threshold systematically excludes most of the independent experimental scene, which
+receives between 4.000–30.000 EUR annually from MA7. Treated as structural finding, not
+data gap.
+
+Many Vereine don't appear with their full name. It was necessary to try different combinations
+
+Infos about [Einzeln Person] usually not available. Vincent Pongracz, Joanna Colemman.
+ 
+Methodological note on Transparenzportal: the portal covers both federal (BMKöS, BMWKmS)
+and Stadt Wien (MA7) funding but does not label the source agency in all entries. Attribution
+to MA7 vs BMKöS based on Maßnahme language:
+  – "Musik: Förderung von Vereinen, vergleichbaren Einrichtungen und Einzelpersonen" → MA7
+  – "Förderung von Einzelvorhaben und Jahrestätigkeiten im Bereich der Musik" → ambiguous;
+    default MA7 unless corroborated by Kulturbericht entry
+  – "Förderung von Festspielen und ähnlichen Saisonveranstaltungen" → BMKöS
+  – "Bezirkskulturförderung" → Bezirkskultur
+  – "Regionale Kulturinitiativen" → MA7 subprogram
+ 
+Wienbibliothek Digital (digital.wienbibliothek.at): identified as primary source for pre-IFG
+Kunst- und Kulturberichte der Stadt Wien (Rathauskorrespondenz). Requires JavaScript-enabled
+browser — cannot be accessed via automated fetch. Content to be retrieved manually and pasted
+for extraction in June.
+ 
+May 28–29
+Dataset cleaning: extensive manual correction of dataset_wip.csv. Root cause of persistent
+problems: schalltaucherin entries were originally formatted with commas as internal separators
+inside band member lists (e.g. "schtum (Robert Pockfuß, Manu Mayr)"). When saved as
+comma-separated CSV, these commas triggered column shifts — artist names appeared in
+Veranstalter, Verein, and Foerderung_ref fields. The problem affected ~50 rows (filas 332–379).
+ 
+Manual correction proved necessary: automated scripts correctly identified the pattern but
+reconstruction of split Kuenstler:innen strings was unreliable due to variable number of
+commas per entry. Took approximately 2 sessions to correct manually. Lesson: schalltaucherin
+entries should be added to dataset via semicolon-delimited file directly to avoid this problem
+in future iterations.
+ 
+Additional issues corrected during manual pass:
+  – Date formats: ~52 entries used D.M.YYYY instead of YYYY-MM-DD. Standardized throughout.
+  – Venue name variants: Rhiz/rhiz, Porgy and Bess/Porgy & Bess, Flucc/flucc, Echoraum/
+    echoraum. Normalized to lowercase consistent with venues.csv convention and pandas
+    join requirement.
+  – Foerderung_ref formatting: trailing pipes, double spaces, "MA7 (MA7)" typos corrected.
+  – 32 entries missing Verein: completed using vereine table and event context (venue +
+    event series as proxy).
+ 
+Dataset status end of May 29: 378 entries. Further additions pending (PARKEN events,
+Gleis 21 / PRISM series).
+ 
+May 29–31
+Bezirk cross-analysis (preliminary): dataset + vereine joined by Bezirk. Key updated findings
+with expanded vereine table (266 entries):
+ 
+  Bezirk 1: 88 events, 0 EUR in vereine (MA7). Porgy & Bess and Alte Schmiede funded via
+  Gemeinderatsbeschlüsse, not captured in vereine table at organization-level detail. Bezirk 1
+  venue activity is high precisely because funded institutions (Porgy & Bess, Konzerthaus)
+  are domiciled elsewhere (Bezirk 4, Bezirk 3) while programming in Bezirk 1. Structural
+  finding: most active event bezirk has zero directly attributed MA7 funding.
+ 
+  Bezirk 3: ~1.8M EUR. Dominated by Wien Modern (domiciled at 1030 Wien). Events in dataset
+  at Bezirk 3 venues are minimal and unrelated to Wien Modern programming. Classic case of
+  domicile/activity dissociation.
+ 
+  Bezirk 4: ~1M EUR, 0 events. Porgy & Bess and VEIM are domiciled here. Both program
+  elsewhere. Confirms pattern: Bezirk 4 is a legal address cluster with no corresponding
+  activity geography.
+ 
+  Bezirk 9: 2.29M EUR (largest, updated). WUK 450k/yr drives this number. WUK programs
+  across disciplines — music funding not desegregatable.
+ 
+  Bezirk 15: ~847k EUR. echoraum remains the most spatially coherent actor: domicile and
+  primary activity in same Bezirk. Reference case for the argument.
+ 
+  Bezirk 20: Studio Dan domiciled here (1200). Programs at Porgy & Bess, Szene Wien,
+  Theater am Werk. Zero events in Bezirk 20 in dataset.
+ 
+Cross-analysis methodology note: Bezirk assigned from verein domicile (Vereinsregister /
+venue website), not from event location. This is not a flaw — it is the methodological point.
+No official source disaggregates MA7 funding by event location rather than by organizational
+domicile. The spatial mismatch is the finding.
+ 
+Funding attribution from Transparenzportal confirmed: "Musik: Förderung von Vereinen"
+category entries are consistently MA7. Multi-source actors (e.g. SISTERS receiving MA7 +
+BMKöS in same year for different programs) documented as separate vereine rows.
+ 
+Methodological framework drafted (from parallel analysis session): three structural phenomena
+explaining funding data gaps beyond simple "opacity":
+  1. Institutional Budget Pooling — state channels macro-grants to GmbH intermediaries
+     (Koproduktionshaus Wien GmbH / brut, Szene Wien GmbH), making individual colectivo
+     funding invisible in Beschluss records.
+  2. Identity/Legal Entity Dissociation — digital portals index legal names, not artistic
+     brands. "rhiz" as brand ≠ "Rantasa + Rantasa GmbH" as legal entity.
+  3. Micro-Funding Fragmentation — Bezirkskulturförderung (typically 300–5000 EUR per
+     event) does not appear in federal or central MA7 transparency instruments.
+ 
+These three phenomena to be incorporated into the Methodenkapitel of the Bericht as
+explanation for structural data limits rather than citing "opacidad" generically.
+ 
+Pending (to resolve first week of June):
+  – dataset: add PARKEN events (itinerant, multiple bezirke)
+  – dataset: add PRISM series at Gleis 21 (Bezirk 10)
+  – dataset: verify Gleis 21 as venue (SKE + BMKöS + MA7 documented)
+  – venues.csv: add Gleis 21 (Bezirk 10, Offspace/Wohnprojekt)
+  – vereine: fill Bezirk for RESONANCES+TRANSITIONS, czirp czirp, ensemble N, snim
+  – vereine: verify ZVR for WUK (535133641*), PHACE (366181964*), Studio Dan (408034688*)
+  – run definitive bezirk cross-analysis with cleaned dataset and updated vereine
+  – produce bar chart: events vs. EUR per Bezirk (single visualization)
+  – QGIS: setup + first map pass
+ 
+Dataset status: 378 entries
+Venues status: ~73 entries
+Vereine status: 266 entries (post-Transparenzportal + Kulturbericht 2022–2024 scan)
+ 
+
