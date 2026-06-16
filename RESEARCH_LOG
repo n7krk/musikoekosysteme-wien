@@ -1,8 +1,6 @@
 RESEARCH LOG
 Musikalische Ökosysteme in Wien — Vorstudie 2026
 
----
-
 March 31
 
 - language: markdown files and github commits in english. field names in german 
@@ -42,14 +40,10 @@ Problems
 - some venues host funded experimental events but aren't primarily
   known as experimental spaces — handled with inclusion criteria above.
 
----
-
 April 6–10
 
 - work structure: goals → tasks → microtasks
 - weekly mini-phases for data collection phase
-
----
 
 April 13
 
@@ -67,15 +61,11 @@ April 13
 - limitations values: vollständig / teilweise geschwärzt / anonymisiert /
   unvollständig
 
----
-
 April 14
 
 - quellen_events granularity: Einzelveranstaltung / Programm / aggregiert
 - "Schwerpunkt" renamed to "Programmprofil" in venues table
 - venue-typ added: Konzerthaus / Club / Kulturzentrum / Studio / Pop-up
-
----
 
 April 15–16
 
@@ -91,8 +81,6 @@ April 15–16
 - quellen_venues: added Quellentyp and Verwendung columns
 - venues: added Klassifizierung column: Kernvenue / gemischtes Programm /
   gelegentlich / unsicher
-
----
 
 April 21
 
@@ -114,8 +102,6 @@ New venues
   Stadtkino im Künstlerhaus, Rote Bar im Volkstheater,
   Akademie der Bildenden Künste Wien, St. Ruprecht,
   Studio Eberhard, Tonspur Festival (outdoor)
-
----
 
 April 21–22
 
@@ -145,8 +131,6 @@ Technical
 - scraping done locally (server allowlist restrictions)
 - tools: python 3.12, requests, beautifulsoup4
 - AI used for script development and debugging
-
----
 
 April 23
 
@@ -199,8 +183,6 @@ Dataset status
 - dataset.csv: 218 entries
 - venues.csv: ~70 entries, 6–7 pending
 
----
-
 April 24–25
 
 - Sonic Territories 2022–2024: all editions in, including Rhiz extended
@@ -240,8 +222,6 @@ Dataset status
 - dataset.csv: ~245 entries
 - venues.csv: ~70 entries + 8 pending
 
----
-
 April 27
 
 - MA7 Kunst-, Kultur- und Wissenschaftsbericht (annual, wienbibliothek.at):
@@ -279,8 +259,6 @@ New venues
 Dataset status
 - dataset.csv: ~250 entries
 - venues.csv: ~70 entries + 8 pending coordinates
-
----
 
 April 29
 
@@ -710,5 +688,77 @@ Pending (to resolve first week of June):
 Dataset status: 378 entries
 Venues status: ~73 entries
 Vereine status: 266 entries (post-Transparenzportal + Kulturbericht 2022–2024 scan)
+
+June 1–15, 2026
+
+**Data status at the start of June:** vereine.csv at 569 entries, dataset.csv at 369 events, 18 funding sources documented.
+
+**June 1–5 ~ Data quality control and scope closure**
+
+The first week of June was dedicated to a final manual quality control pass across all three core CSVs. This wasn't new data collection, it was verification: field consistency, separator integrity, entry-level accuracy. Last systematic review before moving into analysis.
+
+Several scope decisions were finalized and closed:
+
+- SKE parafiscal funding: acknowledged in Bericht as an existing category, not analyzed in depth.
+- Porgy & Bess: events held there are not automatically attributed to Porgy's subsidies. The unit of analysis is the organizing actor. Documented in methodology.
+- PARKEN: activity not traceable — they run itinerant series in public spaces with no fixed venue. No events added to dataset.
+- kein.ponny: Einzelperson funding (MA7 2024, €2,000) entered in vereine. Events not tracked.
+- Gleis21: added to venues.csv. PRISM series identified but kept out of dataset — scope is closed.
+- Wienbibliothek Digital: added to quellen as primary source for digitalized Kulturberichte.
+- Kompositionsförderung: removed from vereine entirely. Different funding logic, different unit of analysis.
+- OpenRefine: final cleaning done. Artist name spacing, capitalization per each actor's own usage, and the Theater am Werk / Das Werk distinction all corrected.
+- A handful of key Einzelpersonen added to vereine — individuals who organize core events in the corpus.
+
+**June 6–10 ~ Cross-analysis and first visualizations**
+
+The methodology for the bezirk cross-analysis shifted: instead of attributing funding by the Verein's legal domicile, the cross is now built around where the event actually happened. The resulting table looks like this: `Bezirk | Verein | n_events | EUR_total`.
+
+Map typology finalized and fixed:
+
+- Spatial (QGIS): event density by Bezirk (choropleth), venue locations by Klassifiezierung (points), funding by domicile Bezirk (choropleth), and the central map — events vs. funding overlaid to show the spatial mismatch.
+- Thematic/analytical (plotly): time series by month/year, top Vereine by activity and funding, Bezirk × Verein heatmap, event type distribution by Bezirk.
+
+Two visualizations produced in Jupyter (cruce.ipynb) and exported as HTML and PNG:
+
+- Dual-axis bar chart: events vs. funding by Bezirk. First deliverable for the Bericht.
+- Bar chart: total funding by year. Clear downward trend from 2024 onward: 2022 €4.9M → 2024 €5.8M → 2026 €3.3M. Worth noting: 2025–2026 data is incomplete in the corpus.
+
+Technical issues: kaleido needed a full reinstall and kernel restart before static image export worked. Also detected a CSV separator inconsistency in dataset.csv. Likely an OpenRefine artifact. Fixed in all subsequent pd.read_csv calls.
+
+Started reading secondary literature on kulturrat.at.
+
+**June 11–15 ~ Interview design and QGIS**
+
+Getting people to sit down for an interview turned out to be harder than expected. Several potential Some interview partners contacted didn't respond at all. Others were willing in principle but scheduling was clearly an extra weight on top of already full agendas. Some of the most useful conversations happened informally and unplanned, in person, on the spot. As an ethical reciprocity gesture, the researcher offered to volunteer at events.
+
+Four Interviewpartner:innen confirmed (A, B, C, D):
+
+- Interviewpartner:in A: written questionnaire in German, 9 questions, casual register.
+- Interviewpartner:in B: written questionnaire in Spanish, 8 questions with probe follow-ups. Voice notes or text both accepted.
+- Interviewpartner:in C and D: format to be confirmed informal conversation or written responses.
+
+Design decisions across all interviews:
+
+- Separate questionnaires per actor, built around their specific positioning in the scene.
+- Ethical compliance text drafted in German: anonymity, voluntary participation, right to withdraw, option to review citations before publication.
+- Responses to be deleted after analysis — agreed with all Interviewpartner:innen.
+
+QGIS: venues.csv successfully loaded as a point layer (EPSG:4326, lon=X, lat=Y). OpenStreetMap base map added. Symbology by Klassifiezierung applied and working. Static export pending ~ OSM tiles loading slowly due to connection issues. Minor encoding bug detected in venues.csv: `*arte visual no música` rendering as `?arte visual no música`: corrected
  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
