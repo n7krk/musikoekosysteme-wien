@@ -134,3 +134,7 @@ Tools
 - OpenRefine — data cleaning
 - QGIS — spatial analysis (May 2026)
 - pandas / matplotlib — frequency analysis and visualization (May 2026)
+
+---
+
+Repository update in progress (July 2026): datasets and README reflect an earlier project stage. Current corpus: 505 entries in vereine.csv, 989 klingt.org events, 376 dataset.csv events. Full update pending before final submission.
